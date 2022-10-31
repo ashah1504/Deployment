@@ -1,0 +1,41 @@
+{% extends 'taskapp/common/base.html'%}
+{% load static %}
+
+{% block content%}
+
+    <header class="masthead" style="background-image:url('../../static/img/about-bg.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="site-heading">
+                        <h1>Daily Task</h1><span class="subheading">This is what I do</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <ul class="list-group">
+                    <li class="list-group-item"><span>Buy groceries for lunch</span>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">completed</label></div>
+                    </li>
+                    <li class="list-group-item"><span>Project work for AI and Cloud</span>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">completed</label></div>
+                    </li>
+                    <li class="list-group-item"><span>Meet with team to practice presentation</span>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3">completed</label></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" id="NewTask">
+            <a href="{% url 'taskadd' %}">
+                <button type="button" class="btn btn-outline-primary">New Task</button>
+            </a>
+        </div>
+        </div>
+    </div>
+    <hr>
+{% endblock%}

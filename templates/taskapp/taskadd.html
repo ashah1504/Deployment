@@ -1,0 +1,26 @@
+{% extends 'taskapp/common/base.html'%}
+{% load widget_tweaks %}
+{% load static %}
+{% block content%}
+
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="fw-bold">Add Tasks</h2>
+            </div>
+            <form action="{% url 'taskadd' %}" method="post">
+                {% csrf_token %}
+                <label>Name</label>
+                {% render_field form.name %}<br />
+                <label>Description</label>
+                {% render_field form.description %}<br />
+                <label>Status</label>
+                {% render_field form.status %}<br />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
